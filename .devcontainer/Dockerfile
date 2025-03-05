@@ -5,7 +5,7 @@ COPY library-scripts/common-debian.sh /tmp/library-scripts/
 RUN apt update \
     && bash /tmp/library-scripts/common-debian.sh \
     && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends \
+    && apt-get -y install \
     build-essential \
     clang-18 \
     libclang-18-dev \
