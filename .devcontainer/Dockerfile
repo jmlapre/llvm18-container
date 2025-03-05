@@ -5,7 +5,15 @@ COPY library-scripts/common-debian.sh /tmp/library-scripts/
 RUN apt update \
     && bash /tmp/library-scripts/common-debian.sh \
     && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install clang-18 libclang-18-dev \
+    && apt-get -y install --no-install-recommends \
+    build-essential \
+    clang-18 \
+    libclang-18-dev \
+    libtool \
+    python-is-python3 \
+    python3-dev \
+    python3-pip \
+    python3-venv \
     && rm -rf /var/lib/apt/lists/*
 
 USER vscode
