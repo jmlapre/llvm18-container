@@ -6,13 +6,14 @@ RUN apt-get update \
     && bash /tmp/library-scripts/common-debian.sh \
     && rm -rf /var/lib/apt/lists/*
     
-RUN apt update \
+RUN apt-get update \
     && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install \
     build-essential \
     clang-18 \
     libclang-18-dev \
     libtool \
+    lld-18 \
     locate \
     python-is-python3 \
     python3-dev \
@@ -20,7 +21,8 @@ RUN apt update \
     python3-venv \
     && rm -rf /var/lib/apt/lists/*
 
-RUN update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-18 100 && \
-    update-alternatives --install /usr/bin/clang clang /usr/bin/clang-18 100
+RUN update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-18 100 \
+    && update-alternatives --install /usr/bin/clang clang /usr/bin/clang-18 100 \
+    && update-alternatives --install /usr/bin/lld lld /usr/bin/lld-18 100
 
 USER vscode
