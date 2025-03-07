@@ -1,4 +1,4 @@
-FROM debian:trixie
+FROM debian:trixie-slim
 
 COPY library-scripts/common-debian.sh /tmp/library-scripts/
 
