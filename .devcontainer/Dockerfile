@@ -26,3 +26,5 @@ RUN update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-18 1
     && update-alternatives --install /usr/bin/lld lld /usr/bin/lld-18 100
 
 USER vscode
+# It's too easy to forget this.  Add it to the Dockerfile.
+ENV LDFLAGS="-fuse-ld=lld"
