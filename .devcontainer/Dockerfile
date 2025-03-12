@@ -23,7 +23,8 @@ RUN apt-get update \
 
 RUN update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-18 100 \
     && update-alternatives --install /usr/bin/clang clang /usr/bin/clang-18 100 \
-    && update-alternatives --install /usr/bin/lld lld /usr/bin/lld-18 100
+    && update-alternatives --install /usr/bin/lld lld /usr/bin/lld-18 100 \
+    && update-alternatives --install /usr/bin/python-config python-config /usr/bin/python3-config 100
 
 USER vscode
 # It's too easy to forget this.  Add it to the Dockerfile.
