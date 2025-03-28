@@ -11,6 +11,8 @@ RUN apt-get update \
     && apt-get -y install \
     build-essential \
     clang-18 \
+    clangd-18 \
+    clang-tools-18 \
     libclang-18-dev \
     libtool \
     lld-18 \
@@ -23,6 +25,9 @@ RUN apt-get update \
 
 RUN update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-18 100 \
     && update-alternatives --install /usr/bin/clang clang /usr/bin/clang-18 100 \
+    && update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-18 100 \
+    && update-alternatives --install /usr/bin/scan-build scan-build /usr/bin/scan-build-18 100 \
+    && update-alternatives --install /usr/bin/scan-view scan-view /usr/bin/scan-view-18 100 \
     && update-alternatives --install /usr/bin/lld lld /usr/bin/lld-18 100 \
     && update-alternatives --install /usr/bin/python-config python-config /usr/bin/python3-config 100
 
