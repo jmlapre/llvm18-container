@@ -1,5 +1,7 @@
 FROM debian:trixie-20250929-slim
 
+LABEL maintainer="jmlapre@sandia.gov"
+
 COPY library-scripts/common-debian.sh /tmp/library-scripts/
 
 RUN apt-get update \
