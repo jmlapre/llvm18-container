@@ -19,6 +19,7 @@ RUN apt-get update \
     libtool \
     lld-18 \
     locate \
+    m4 \
     python-is-python3 \
     python3-dev \
     python3-pip \
