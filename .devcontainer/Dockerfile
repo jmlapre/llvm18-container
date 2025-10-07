@@ -10,7 +10,7 @@ RUN apt-get update \
     
 RUN apt-get update \
     && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install \
+    && apt-get --no-install-recommends -y install \
     build-essential \
     clang-18 \
     clangd-18 \
