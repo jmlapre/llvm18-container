@@ -18,6 +18,7 @@ RUN apt-get update \
     clang-tools-18 \
     libclang-18-dev \
     libtool \
+    libltdl-dev \
     lld-18 \
     locate \
     m4 \
